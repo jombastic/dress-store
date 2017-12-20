@@ -22,6 +22,53 @@ $(function() {
     $("#chosenColor").text(dressColor);
     $("#chosenSize").text(dressSize);
 
-    $("fieldset").removeAttr("disabled");
+    $("#chosenDress").show();
+
+
+    $("#buyerFieldset").removeAttr("disabled");
+  });
+
+  $("#buyerInfo").submit(function(event) {
+    event.preventDefault();
+
+    var buyerName = $("#buyerName").val();
+    var buyerAddress = $("#buyerAddress").val();
+    var buyerCity = $("#buyerCity").val();
+    var phoneNumber = $("#phoneNumber").val();
+
+    $("#contactName").text(buyerName);
+    $("#contactAddress").text(buyerAddress);
+    $("#contactCity").text(buyerCity);
+    $("#contactNumber").text(phoneNumber);
+
+    $("#dressFieldset").attr("disabled", "true");
+    $("#buyerFieldset").attr("disabled", "true");
+
+    $("#contactInfo").show();
+    $("#purchase").show();
+  });
+
+  $("#edit").click(function() {
+    $("#contactInfo").hide();
+    $("#purchase").hide();
+    $("#buyerFieldset").removeAttr("disabled");
   });
 });
+
+var modal = document.getElementById('purchaseNotise');
+var btn = document.getElementById("purchase");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
