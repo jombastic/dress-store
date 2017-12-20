@@ -1,3 +1,26 @@
-#blueDress, #yellowDress {
+#blueDress,
+#yellowDress,
+#chosenDress,
+#contactInfo {
   display: none;
+}
+
+#chosenDress {
+  margin-top: 3%;
+  border: 5px groove #e8e8e8;
+}
+
+#contactInfo {
+  border: 2px solid #d12121;
+  background-color: #ffeded;
+}
+
+#edit {
+  color: #06c;
+}
+
+#edit:hover {
+  color: #F90;
+  text-decoration: underline;
+  cursor: pointer;
 }
